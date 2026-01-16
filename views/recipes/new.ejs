@@ -12,8 +12,16 @@
         <input type="text" id="name" name="name" required />
         <br>
         <label for="instructions">Instructions:</label>
-        <textarea id="instructions" name="instructions"></textarea>
+        <input type="text" id="instructions" name="instructions" />
         <br>
+        <h3>Select Ingredients</h3>
+        <% ingredients.forEach(ingredient => { %>
+    <label>
+    <input type="checkbox" name="ingredients" value="<%= ingredient._id %>">
+    <%= ingredient.name %>
+    </label>
+    <br />
+    <% }) %>
         <button type="submit">Create Recipe</button>
     </form>
 </body>
